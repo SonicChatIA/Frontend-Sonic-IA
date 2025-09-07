@@ -8,6 +8,7 @@ import { links } from "../config";
 import { navigation } from "../constants";
 import Button from "./Button";
 import { HambugerMenu } from "./design/Header";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = () => {
   const pathname = useLocation();
@@ -76,9 +77,10 @@ const Header = () => {
           <HambugerMenu />
         </nav>
 
-        <Button className="hidden lg:flex" href={links.sourceCode} external>
+        {/* <Button className="hidden lg:flex" href={links.sourceCode} external>
           Source Code
-        </Button>
+        </Button> */}
+        <ConnectButton className="hidden lg:flex"/>
 
         <Button
           onClick={toggleNavigation}
