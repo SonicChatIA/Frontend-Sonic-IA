@@ -278,6 +278,42 @@ This project is under the MIT License. See the [LICENSE](LICENSE) file for more 
 
 ![Transaction Flow](./src/assets/readme%20sreen/img8.jpeg "Transaction Flow")
 
+## :rocket: Sonic Mainnet Deployment
+
+🎉 **Smart Contract Successfully Deployed on Sonic Mainnet!**
+
+### Contract Details:
+- **Contract Address**: `0x9d7b2eA62b7B9B1c382c1B92e8dd567E6e772090`
+- **Network**: Sonic Mainnet (Chain ID: 146)
+- **Explorer**: [View on Sonicscan](https://sonicscan.org/address/0x9d7b2ea62b7b9b1c382c1b92e8dd567e6e772090)
+- **Status**: ✅ Verified and Active
+
+### Key Features:
+- **Create Transactions**: Register S token transactions on-chain
+- **Execute Transactions**: Process pending transactions with smart contract validation
+- **Transaction History**: Query user transactions and pending operations
+- **Event Logging**: Full transaction history with TransactionCreated and TransactionExecuted events
+
+### Contract Functions:
+- `createTransaction(address _recipient, uint256 _amount, string _currency)` - Create a new transaction record
+- `executeTransaction(uint256 _transactionId)` - Execute a pending transaction
+- `getUserTransactions(address _user)` - Get all transactions for a user
+- `getTransaction(uint256 _transactionId)` - Get detailed transaction information
+- `getPendingTransactions()` - Get all pending transactions
+
+### Usage Examples:
+```javascript
+// Send S tokens using natural language
+"Send 0.1 S to Omar"
+"Transfer 5 S to 0x742d35Cc6634C0532925a3b8D404e2ce5E99DfeF"
+"Send 0.001 S to Yamil"
+
+// Query information
+"What's my balance?"
+"Show my transaction history"
+"Explain smart contracts"
+```
+
 ## :gear: Tech Stack
 
 [![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Vite JS](https://skillicons.dev/icons?i=vite "Vite JS")](https://vitejs.dev/ "Vite JS") [![Javascript](https://skillicons.dev/icons?i=js "Javascript")](https://developer.mozilla.org/en-US/docs/Web/JavaScript "Javascript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Vercel](https://skillicons.dev/icons?i=vercel "Vercel")](https://Vercel.app/ "Vercel") 
