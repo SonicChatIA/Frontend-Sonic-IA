@@ -23,7 +23,7 @@ import loading from "./loading.png";
 import background from "./background.jpg";
 
 import curve from "./hero/curve.png";
-import robot from "./IA chat/Bot.agarando.png";
+import robot from "./IA chat/transaction.png";
 import heroBackground from "./hero/hero-background.jpg";
 
 import curve1 from "./collaboration/curve-1.svg";
@@ -38,8 +38,8 @@ import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
 
 import service1 from "./services/service-1.png";
-import service2 from "./services/service-2.png";
-import service3 from "./services/service-3.png";
+import service2 from "./IA chat/userIA.png";
+import service3 from "./services/responder IA.png";
 
 import lines from "./pricing/lines.svg";
 import stars from "./pricing/stars.svg";

@@ -9,6 +9,7 @@ import {
 } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
 import { useEffect, useRef, useState } from "react";
+import imglogo from "../../assets/IA chat/logo-offi2-Photoroom.png"
 
 export const Gradient = () => {
   return (
@@ -30,11 +31,10 @@ export const PhotoChatMessage = () => {
       <Typewriter
         options={{
           strings: [
-            "Hey Brainwave, enhance this photo.",
-            "Hey Brainwave, give this photo a boost.",
-            "Brainwave, enhance the details in this photo.",
-            "Activate Brainwave mode to refine this photo.",
-            "Brainwave, apply your magic to this photo.",
+            "Transfer 10 sonic to wallet 0x251...67",
+            "Transfer 0.3 sonic to Andrew wallet",
+            "Send 0.5 sonic to Mom wallet",
+            "Pay for my 2 sonic coffee at 0x345...784",
           ],
           autoStart: true,
           loop: true,
@@ -50,16 +50,16 @@ export const VideoChatMessage = ({ isPlaying }) => {
     <div className="absolute top-8 left-[3.125rem] w-full max-w-[14rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-base md:max-w-[17.5rem]">
       <Typewriter
         options={{
-          strings: isPlaying ? ["Video generating..."] : ["Video generated!"],
+          strings: isPlaying ? ["Transaction completed. You have successfully sent 0.1 SONIC to wallet 0x05341... Transaction hash: 0xabc123..."] : ["🎉 Done! I just sent 0.1 SONIC to 0x05341....Your transaction was confirmed on the SONIC network in 3 seconds."],
           cursor: isPlaying ? "|" : "",
           autoStart: true,
           deleteSpeed: isPlaying ? "natural" : Infinity,
           loop: isPlaying,
         }}
       />
-      <div className="absolute left-5 -bottom-[1.125rem] flex items-center justify-center w-[2.25rem] h-[2.25rem] bg-color-1 rounded-[0.75rem]">
+      <div className="absolute left-5 -bottom-[1.125rem] flex items-center justify-center w-[2.25rem] h-[2.25rem] bg-blue-600 rounded-[0.75rem]">
         <img
-          src={brainwaveWhiteSymbol}
+          src={imglogo}
           width={26}
           height={26}
           alt="Brainwave"
