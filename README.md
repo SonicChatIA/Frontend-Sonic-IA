@@ -1,17 +1,12 @@
 <a name="readme-top"></a>
 
-# Brainwave - Modern Animated SaaS Generative AI Landing Page
+# Sonic IA - AI-Powered Sonic Blockchain Transaction Assistant
 
-![Brainwave - Modern Animated SaaS Generative AI Landing Page](/.github/images/img_main.png "Brainwave - Modern Animated SaaS Generative AI Landing Page")
+![Sonic IA](/.github/images/img_main.png "Sonic IA - AI-Powered Sonic Blockchain Transaction Assistant")
 
-[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
-[![GitHub license](https://flat.badgen.net/github/license/sanidhyy/brainwave?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/blob/main/LICENSE "GitHub license")
-[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/commits/main "Maintenance")
-[![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/brainwave?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/branches "GitHub branches")
-[![Github commits](https://flat.badgen.net/github/commits/sanidhyy/brainwave?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/commits "Github commits")
-[![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/brainwave?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/issues "GitHub issues")
-[![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/brainwave?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/brainwave/pulls "GitHub pull requests")
-[![Netlify Status](https://api.netlify.com/api/v1/badges/12f8872e-e503-44e8-aaee-9d024f8cba55/deploy-status)](https://app-brainwave.netlify.app/ "Netlify Status")
+[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/SonicChatIA "Ask Me Anything!")
+[![GitHub license](https://flat.badgen.net/static/License/MIT?icon=github&color=black&scale=1.01)](https://github.com/SonicChatIA/Frontend-Sonic-IA/blob/main/LICENSE "GitHub license")
+[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/SonicChatIA/Frontend-Sonic-IA/commits/main "Maintenance")
 
 <!-- Table of Contents -->
 <details>
@@ -22,29 +17,43 @@
 
 </summary>
 
+- [About the Project](#star2-about-the-project)
 - [Folder Structure](#bangbang-folder-structure)
 - [Getting Started](#toolbox-getting-started)
 - [Screenshots](#camera-screenshots)
 - [Tech Stack](#gear-tech-stack)
-- [Stats](#wrench-stats)
+- [Features](#gem-features)
+- [Smart Contract](#contract-smart-contract)
+- [AI Integration](#robot-ai-integration)
+- [Sonic Mainnet Deployment](#rocket-sonic-mainnet-deployment)
+- [Usage Examples](#bulb-usage-examples)
+- [Environment Variables](#key-environment-variables)
 - [Contribute](#raised_hands-contribute)
 - [Acknowledgements](#gem-acknowledgements)
-- [Buy Me a Coffee](#coffee-buy-me-a-coffee)
-- [Follow Me](#rocket-follow-me)
-- [Learn More](#books-learn-more)
-- [Deploy on Netlify](#page_with_curl-deploy-on-netlify)
-- [Give A Star](#star-give-a-star)
-- [Star History](#star2-star-history)
-- [Give A Star](#star-give-a-star)
+- [License](#scroll-license)
 
 </details>
+
+## :star2: About the Project
+
+Sonic IA is an innovative AI-powered chatbot that simplifies Sonic blockchain transactions through natural language processing. Built with React and integrated with Deepseek AI, it allows users to send S tokens using conversational commands while managing contacts and transaction history seamlessly on Sonic Mainnet.
+
+### Key Highlights:
+- 🤖 **AI-Powered**: Natural language transaction processing using Deepseek AI
+- 🔗 **Web3 Integration**: Full wallet connectivity with wagmi and Sonic Mainnet
+- 💰 **Smart Transactions**: Send S tokens with simple commands like "Send 0.001 S to Omar"
+- 📱 **Modern UI**: Beautiful, responsive interface built with Tailwind CSS
+- 📋 **Contact Management**: Save and manage frequently used wallet addresses
+- 📊 **Transaction History**: Track all your transactions with Sonicscan links
+- 🔒 **Secure**: All transactions are processed through your connected wallet
+- ⚡ **Sonic Speed**: Lightning-fast transactions on the Sonic blockchain
 
 ## :bangbang: Folder Structure
 
 Here is the folder structure of this app.
 
 ```bash
-brainwave/
+Frontend-Sonic-IA/
   |- public/
     |-- apple-icon.png
     |-- favicon.ico
@@ -118,9 +127,45 @@ brainwave/
 
 ![Onboarding Section](/.github/images/img4.png "Onboarding Section")
 
+## :rocket: Sonic Mainnet Deployment
+
+🎉 **Smart Contract Successfully Deployed on Sonic Mainnet!**
+
+### Contract Details:
+- **Contract Address**: `0x9d7b2eA62b7B9B1c382c1B92e8dd567E6e772090`
+- **Network**: Sonic Mainnet (Chain ID: 146)
+- **Explorer**: [View on Sonicscan](https://sonicscan.org/address/0x9d7b2ea62b7b9b1c382c1b92e8dd567e6e772090)
+- **Status**: ✅ Verified and Active
+
+### Key Features:
+- **Create Transactions**: Register S token transactions on-chain
+- **Execute Transactions**: Process pending transactions with smart contract validation
+- **Transaction History**: Query user transactions and pending operations
+- **Event Logging**: Full transaction history with TransactionCreated and TransactionExecuted events
+
+### Contract Functions:
+- `createTransaction(address _recipient, uint256 _amount, string _currency)` - Create a new transaction record
+- `executeTransaction(uint256 _transactionId)` - Execute a pending transaction
+- `getUserTransactions(address _user)` - Get all transactions for a user
+- `getTransaction(uint256 _transactionId)` - Get detailed transaction information
+- `getPendingTransactions()` - Get all pending transactions
+
+### Usage Examples:
+```javascript
+// Send S tokens using natural language
+"Send 0.1 S to Omar"
+"Transfer 5 S to 0x742d35Cc6634C0532925a3b8D404e2ce5E99DfeF"
+"Send 0.001 S to Yamil"
+
+// Query information
+"What's my balance?"
+"Show my transaction history"
+"Explain smart contracts"
+```
+
 ## :gear: Tech Stack
 
-[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Vite JS](https://skillicons.dev/icons?i=vite "Vite JS")](https://vitejs.dev/ "Vite JS") [![Javascript](https://skillicons.dev/icons?i=js "Javascript")](https://developer.mozilla.org/en-US/docs/Web/JavaScript "Javascript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Netlify](https://skillicons.dev/icons?i=netlify "Netlify")](https://netlify.app/ "Netlify")
+[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Vite JS](https://skillicons.dev/icons?i=vite "Vite JS")](https://vitejs.dev/ "Vite JS") [![Javascript](https://skillicons.dev/icons?i=js "Javascript")](https://developer.mozilla.org/en-US/docs/Web/JavaScript "Javascript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Sonic Blockchain](https://img.shields.io/badge/Sonic-Blockchain-blue "Sonic Blockchain")](https://soniclabs.com/ "Sonic Blockchain")
 
 ## :wrench: Stats
 

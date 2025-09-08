@@ -51,15 +51,15 @@ const ChatTest = () => {
       const transactionUrl = getTransactionUrl(hash);
       setMessages(prev => [...prev, { 
         role: "assistant", 
-        content: `✅ **S Token sent successfully!**
+        content: `✅ **SepoliaETH sent successfully!**
 
 💰 **Details:**
-• Amount: ${pendingTransaction.amount} S
+• Amount: ${pendingTransaction.amount} ETH
 • Recipient: ${pendingTransaction.displayName}
 • Hash: ${hash}
-• Network: Sonic Mainnet
+• Network: Sepolia Testnet
 
-🔗 **View on Sonicscan:** ${transactionUrl}
+🔗 **View on Etherscan:** ${transactionUrl}
 
 Transaction completed! 🎉` 
       }]);
@@ -90,8 +90,8 @@ Transaction completed! 🎉`
   const parseTransactionCommand = (message) => {
     // More flexible patterns to detect send commands
     const patterns = [
-      /(?:send|enviar|transfer)\s+([\d.]+)\s+(?:s|sonic|eth)\s+(?:to|a)\s+(0x[a-fA-F0-9]{40})/i,
-      /(?:send|enviar|transfer)\s+([\d.]+)\s+(?:s|sonic|eth)\s+(?:to|a)\s+(\w+)/i,
+      /(?:send|enviar|transfer)\s+([\d.]+)\s+(?:eth|sepolia\s*eth)\s+(?:to|a)\s+(0x[a-fA-F0-9]{40})/i,
+      /(?:send|enviar|transfer)\s+([\d.]+)\s+(?:eth|sepolia\s*eth)\s+(?:to|a)\s+(\w+)/i,
       /(?:send|enviar)\s+([\d.]+)\s+(?:to|a)\s+(0x[a-fA-F0-9]{40})/i,
       /(?:send|enviar)\s+([\d.]+)\s+(?:to|a)\s+(\w+)/i
     ];
@@ -127,15 +127,15 @@ Transaction completed! 🎉`
     }
     
     if (lowerMessage.includes('smart contract') || lowerMessage.includes('contract')) {
-      return "📜 **Smart Contracts** are programs that execute automatically on the blockchain when certain conditions are met. Our bot uses the TransactionManager contract on Sonic Mainnet to manage transactions securely.\n\n🔍 Contract address: `" + CONTRACT_CONFIG.address + "`";
+      return "📜 **Smart Contracts** are programs that execute automatically on the blockchain when certain conditions are met. Our bot uses the TransactionManager contract on Sepolia to manage transactions securely.\n\n🔍 Contract address: `" + CONTRACT_CONFIG.address + "`";
     }
     
     if (lowerMessage.includes('balance') || lowerMessage.includes('saldo')) {
-      return `💰 To view your current balance, check your wallet ${isConnected ? `(${formatAddress(address)})` : '(not connected)'} on Sonic Mainnet.\n\n🔗 You can use: https://sonicscan.org/address/${address || 'your-address'}\n\n💡 This is Sonic Mainnet - use real S tokens!`;
+      return `💰 To view your current balance, check your wallet ${isConnected ? `(${formatAddress(address)})` : '(not connected)'} on Sepolia Testnet.\n\n🔗 You can use: https://sepolia.etherscan.io/address/${address || 'your-address'}\n\n💡 To get test ETH: https://sepoliafaucet.com/`;
     }
     
     if (lowerMessage.includes('help') || lowerMessage.includes('ayuda') || lowerMessage.includes('command')) {
-      return `🤖 **Available commands:**\n\n📤 **To send S tokens:**\n• \`Send 0.001 S to 0x...\`\n• \`Send 0.5 S to Omar\`\n• \`Transfer 0.1 S to 0x...\`\n\n❓ **Queries:**\n• "What is Sonic?"\n• "What's my balance?"\n• "Explain smart contracts"\n\n💡 I use natural language - just tell me what you want to do!`;
+      return `🤖 **Available commands:**\n\n📤 **To send SepoliaETH:**\n• \`Send 0.001 ETH to 0x...\`\n• \`Send 0.5 ETH to Omar\`\n• \`Transfer 0.1 SepoliaETH to 0x...\`\n\n❓ **Queries:**\n• "What is Ethereum?"\n• "What's my balance?"\n• "Explain smart contracts"\n\n💡 I use natural language - just tell me what you want to do!`;
     }
     
     if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hola')) {
@@ -155,7 +155,7 @@ Transaction completed! 🎉`
       const systemContext = `You are Sonic Transaction Bot, an AI assistant specialized in Ethereum transactions.
 
 CONTEXT:
-- You work with the TransactionManager contract on Sonic Mainnet
+- You work with the TransactionManager contract on Sepolia Testnet
 - Contract address: ${CONTRACT_CONFIG.address}
 - User is ${isConnected ? 'connected' : 'disconnected'} ${isConnected ? `with wallet: ${formatAddress(address)}` : ''}
 
@@ -275,7 +275,7 @@ If you don't understand something, ask for clarification. If it's a transaction 
         
         setMessages(prev => [...prev, { 
           role: "assistant", 
-          content: `💼 Preparing transaction:\n• Send: ${amount} S\n• Recipient: ${displayName}\n• Address: ${recipient}\n• Network: Sonic Mainnet\n\nDo you want to continue? Click "Confirm Transaction" to proceed.` 
+          content: `💼 Preparing transaction:\n• Send: ${amount} ETH\n• Recipient: ${displayName}\n• Address: ${recipient}\n• Network: Sepolia Testnet\n\nDo you want to continue? Click "Confirm Transaction" to proceed.` 
         }]);
 
         setPendingTransaction({
@@ -305,7 +305,7 @@ If you don't understand something, ask for clarification. If it's a transaction 
     try {
       setMessages(prev => [...prev, { 
         role: "assistant", 
-        content: `🚀 Sending ${pendingTransaction.amount} S to ${pendingTransaction.displayName}...` 
+        content: `🚀 Sending ${pendingTransaction.amount} SepoliaETH to ${pendingTransaction.displayName}...` 
       }]);
 
       // Send ETH directly using sendTransaction
@@ -323,17 +323,17 @@ If you don't understand something, ask for clarification. If it's a transaction 
       console.error("Error executing transaction:", error);
       setMessages(prev => [...prev, { 
         role: "assistant", 
-        content: `❌ Error sending S tokens: ${error.message}. 
+        content: `❌ Error sending SepoliaETH: ${error.message}. 
 
 🔍 **Possible causes:**
-• Insufficient S balance
-• Wrong network (must be Sonic Mainnet)
+• Insufficient SepoliaETH balance
+• Wrong network (must be Sepolia Testnet)
 • Insufficient gas
 • Invalid address
 
 💡 **Solutions:**
-• Check your S balance on Sonicscan
-• Verify you're on Sonic Mainnet
+• Get free SepoliaETH at: https://sepoliafaucet.com/
+• Verify you're on Sepolia Testnet
 • Try with a smaller amount` 
       }]);
       setPendingTransaction(null);
@@ -384,7 +384,7 @@ If you don't understand something, ask for clarification. If it's a transaction 
         <div className="text-center mb-12">
           <h1 className="h1 mb-6">🤖 Sonic Transaction Bot</h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Smart assistant for S token transactions on Sonic Mainnet
+            Smart assistant for ETH transactions on Sepolia Testnet
           </p>
           
           {/* Connection Status */}
@@ -491,7 +491,7 @@ If you don't understand something, ask for clarification. If it's a transaction 
                         💸 Send ETH
                       </button>
                       <button
-                        onClick={() => setInputValue("How to send S tokens?")}
+                        onClick={() => setInputValue("How to send SepoliaETH?")}
                         className="px-3 py-1 bg-n-7 text-n-2 rounded text-xs hover:bg-n-6 transition-colors"
                       >
                         ❓ Help

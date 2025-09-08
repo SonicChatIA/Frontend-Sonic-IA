@@ -18,9 +18,9 @@ import { sonic } from "./chains/sonic.js";
 
 // 🔹 Configuración de RainbowKit + Wagmi
 const config = getDefaultConfig({
-  appName: "Mi App RainbowKit",
+  appName: "Sonic IA - Transaction Assistant",
   projectId: "4764cb0b8852760547f5a36b9d826354", // WalletConnect ProjectId
-  chains: [mainnet, sepolia, polygon, optimism, arbitrum, base, sonic], // añadimos Sonic
+  chains: [sonic, mainnet, sepolia, polygon, optimism, arbitrum, base], // Sonic primero como red principal
   ssr: true,
 });
 
