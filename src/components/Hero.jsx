@@ -10,31 +10,32 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import Section from "./Section";
+import botEnter from "../assets/IA chat/robo-cart.png"
 
 const Hero = () => {
   const parallaxRef = useRef(null);
 
   return (
     <Section
-      className="pt-[12rem] -mt-[5.25rem]"
+      className="pt-[9rem] -mt-[5.25rem]"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
       id="hero"
     >
       <div ref={parallaxRef} className="container relative">
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
+        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[1rem] md:mb-20 lg:mb-[6rem]">
           <h1 className="h1 mb-6">
             Explore the Possibilities of
             <br />
             <Typewriter
               options={{
                 strings: [
-                  "AI Chatting",
-                  "Photo Editing",
-                  "Video Generation",
-                  "Image Generation",
-                  "Code Generation",
+                  "AI Crypto Assistant",
+                  "Secure Transactions",
+                  "Wallet Automation",
+                  "Blockchain Queries",
+                  "Smart Payments",
                 ],
                 autoStart: true,
                 loop: true,
@@ -42,11 +43,10 @@ const Hero = () => {
             />
           </h1>
 
-          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleast the power of AI within Brainwave. Upgrade your productivity
-            with{" "}
+          <p className="body-1 max-w-3xl mx-auto mb-2 text-n-2 ">
+            Unleash the power of AI with our{" "}
             <span className="inline-block relative font-semibold">
-              Brainwave
+              Chat bot IA
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2 pointer-events-none select-none"
@@ -55,12 +55,20 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
-            , the open AI chat app.
+            . Transform your ideas into real actions: send payments, generate content, and automate your tasks with just one chat.{" "}
+            <span className="font-semibold text-green-400">
+              Paying with Sonic is as easy as sending a WhatsApp message.
+            </span>
           </p>
 
-          <Button href="/iaChat" white>
-            Get started
-          </Button>
+          <div className="relative flex justify-center items-center">
+            <img src={botEnter} alt="" className="w-60 h-60 object-contain" />
+            <div className="absolute bottom-16">
+              <Button href="/iaChat" aiButton>
+                Start your Chat with AI!
+              </Button>
+            </div>
+          </div>
         </div>
 
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
@@ -79,7 +87,7 @@ const Hero = () => {
 
                 <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
-                <ScrollParallax isAbsolutelyPositioned>
+                {/* <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
@@ -87,12 +95,12 @@ const Hero = () => {
                       </li>
                     ))}
                   </ul>
-                </ScrollParallax>
+                </ScrollParallax> */}
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code generation"
+                    title="Quick transfers to friends in Sonic"
                   />
                 </ScrollParallax>
               </div>
